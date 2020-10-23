@@ -12,6 +12,7 @@ headers = {'content-type': 'application/json'}
 
 
 def auth(username, password):
+    """Takes a username and password, returns an authentication token"""
     data = {'data': {'username': username, 'password': password}}
     response = requests.post(API['login'], data=json.dumps(data),
                              headers=headers, verify=False)
@@ -26,6 +27,10 @@ def auth(username, password):
 
 
 def update_ipv4(ipv4_settings):
+    """
+    Takes in a dict with ipv4 settings, and updates it to the AP
+    Returns nothing
+    """
     response = requests.put(API['lan'], data=json.dumps(ipv4_settings),
                             headers=headers, verify=False)
     if response.status_code == 204:
@@ -34,6 +39,7 @@ def update_ipv4(ipv4_settings):
 
 
 def get_ipv4():
+    """Gets the ipv4 settings from the AP"""
     response = requests.get(API['lan'], headers=headers, verify=False)
     if response.status_code == 200:
         ipv4_settings = json.loads(response.content.decode('utf-8'))
@@ -42,6 +48,7 @@ def get_ipv4():
 
 
 def apply_changes():
+    """Applies any saved changes to the AP"""
     response = requests.post(API['apply'], headers=headers, verify=False)
     if response.status_code == 200:
         success = json.loads(response.content.decode('utf-8'))['data']['success']
@@ -50,6 +57,7 @@ def apply_changes():
 
 
 def has_changes():
+    """Verifies whether or not there are saved changes that are not applied"""
     response = requests.get(API['apply_status'], headers=headers, verify=False)
     if response.status_code == 200:
         has_update = json.loads(response.content.decode('utf-8'))['data']['has_update']
