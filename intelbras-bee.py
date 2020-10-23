@@ -73,7 +73,7 @@ def has_changes():
     return None
 
 
-def verify_changes():
+def verify_changes(new_ip):
     """
     Verifies if the ipv4 settings were changed using ping
     """
@@ -102,7 +102,7 @@ if __name__ == '__main__':
         print('Device is restarting...')
         sleep(40)  # measurements indicate that the device takes about 36 seconds to restart.
 
-    if verify_changes():
+    if verify_changes(new_ip):
         print('New access point IPv4 is ' + new_ip)
     else:
         print('Couldn\'t change access point IPv4 settings.')
