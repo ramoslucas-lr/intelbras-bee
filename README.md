@@ -23,6 +23,7 @@ intelbras-bee.update_ipv4(ipv4_settings) # returns True if succeeded
 intelbras-bee.get_ipv4() # returns ipv4_settings
 intelbras-bee.apply_changes() # returns True if successfully applied changes
 intelbras-bee.has_changes() # returns boolean indicating if there are saved changes that were not applied
+intelbras-bee.verify_changes(new_ip) # checks if the IP was changed using ping. returns a boolean
 
 ```
 
