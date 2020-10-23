@@ -4,7 +4,7 @@ intelbras-bee is a Python project for obtaining and updating ipv4 settings on In
 
 ## Requirements
 
-The requirements for running this library are available at requirements.txt file:
+The requirements for using this library are available at requirements.txt file:
 
 ```certifi==2020.6.20  
 chardet==3.0.4  
