@@ -1,6 +1,6 @@
 # intelbras-bee
 
-intelbras-bee is a Python project for obtaining and updating ipv4 settings on Intelbras Access Points using [Intelbras Zeus API](https://izeus.docs.apiary.io/)
+intelbras-bee is a Python project for obtaining and updating ipv4 settings on Intelbras Access Points using [Intelbras Zeus API](https://izeus.docs.apiary.io/). It was developed as a sample application during my Engineering internship at [Intelbras](https://intelbras.com/en)
 
 ## Requirements
 
@@ -26,11 +26,3 @@ intelbras-bee.has_changes() # returns boolean indicating if there are saved chan
 intelbras-bee.verify_changes(new_ip) # checks if the IP was changed using ping. returns a boolean
 
 ```
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
-
-## License
-GNU General Public License
